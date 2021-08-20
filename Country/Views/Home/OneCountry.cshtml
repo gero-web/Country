@@ -1,0 +1,83 @@
+﻿@model Country.Models.SerializerModel.SerializerCountry
+
+@{
+    ViewData["Title"] = "OneCountry";
+}
+
+<h1>OneCountry</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="OnSave">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" readonly="readonly" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="capital" class="control-label"></label>
+                <input asp-for="capital" readonly="readonly" class="form-control" />
+                <span asp-validation-for="capital" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="population" class="control-label"></label>
+                <input asp-for="population" readonly="readonly" class="form-control" />
+                <span asp-validation-for="population" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="area" class="control-label"></label>
+                <input asp-for="area" readonly="readonly" class="form-control" />
+                <span asp-validation-for="area" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="region" class="control-label"></label>
+                <input asp-for="region" readonly="readonly" class="form-control" />
+                <span asp-validation-for="region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numericCode" class="control-label"></label>
+                <input asp-for="numericCode" readonly="readonly" class="form-control" />
+                <span asp-validation-for="numericCode" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+              
+            </div>
+           
+            <button type="button" class="btn btn-primary" value="Сохранить!" data-toggle="modal" data-target="#exampleModal">
+                Запустить модальное окно
+            </button>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Сохранить?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Данные будет сохранены без возможности удаления!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть!</button>
+                            <button type="submit" class="btn btn-primary">Подтвердить!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
