@@ -13,6 +13,6 @@ namespace Country.Models
 
         public DbSet<Cities> Cities { get; set; }
         public DbSet<Regions> Regions { get; set; }
-        public DbSet<CountryModel.Country> Country { get; set; }
+        public DbSet<Countrys> Countrys { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Country.Models.CountryModel
 {
-    public class Country
+    public class Countrys
     {
         public int Id { get; set; }
 

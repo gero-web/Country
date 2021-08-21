@@ -34,7 +34,9 @@ namespace Country.Controllers
                 ModelState.AddModelError("","Название страны не должно быть пустым!");
                 return View("Index");
             }    
+
             var model = await API.GetData(name);
+
             if(model == null)
             {
                 ModelState.AddModelError("", "Данной страны нет");
@@ -45,15 +47,16 @@ namespace Country.Controllers
 
         public IActionResult OnSave(SerializerCountry data)
         {
-            SaveData.Save(_context, data);
+            var saveData = new SaveData(_context);
+            saveData.Save(data);
 
             return View("Index");
         }
 
         public IActionResult AllCountry()
         {
-            _context.Country.Load();
-            var model = _context.Country.Include(region=> region.Region)
+            _context.Countrys.Load();
+            var model = _context.Countrys.Include(region=> region.Region)
                 .Include(capital => capital.Capital).ToList();
             return View(model);
         }

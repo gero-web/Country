@@ -3,14 +3,16 @@ using Country.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Country.Migrations
 {
     [DbContext(typeof(CountryDBContext))]
-    partial class CountryDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210821093338_Fix db")]
+    partial class Fixdb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
